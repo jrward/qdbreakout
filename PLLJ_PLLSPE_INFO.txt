@@ -1,0 +1,5 @@
+PLL_Name	pxl_clk:pxl_clk_inst|altpll:altpll_component|pxl_clk_altpll:auto_generated|pll1
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+
