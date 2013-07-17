@@ -1,5 +1,5 @@
 Analysis & Synthesis report for qdpong
-Wed Jul 17 13:50:21 2013
+Wed Jul 17 14:09:32 2013
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -53,7 +53,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 17 13:50:21 2013      ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 17 14:09:32 2013      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; qdpong                                     ;
 ; Top-level Entity Name              ; qdpong                                     ;
@@ -331,6 +331,9 @@ Encoding Type:  One-Hot
 ; right_edge     ; 632   ; Signed Integer                                ;
 ; top_edge       ; 8     ; Signed Integer                                ;
 ; bottom_edge    ; 472   ; Signed Integer                                ;
+; player_vstart  ; 460   ; Signed Integer                                ;
+; player_width   ; 8     ; Signed Integer                                ;
+; player_hlength ; 32    ; Signed Integer                                ;
 ; down_right     ; 00    ; Unsigned Binary                               ;
 ; down_left      ; 01    ; Unsigned Binary                               ;
 ; up_right       ; 10    ; Unsigned Binary                               ;
@@ -1148,7 +1151,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Jul 17 13:50:19 2013
+    Info: Processing started: Wed Jul 17 14:09:30 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off qdpong -c qdpong
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pxl_clk.v
@@ -1161,24 +1164,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file encoder
     Info (12023): Found entity 1: encoder
 Info (12127): Elaborating entity "qdpong" for the top level hierarchy
 Warning (10858): Verilog HDL warning at qdpong.v(22): object pixel used but never assigned
-Warning (10230): Verilog HDL assignment warning at qdpong.v(128): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(129): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(134): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(135): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(140): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(141): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(146): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(147): truncated value with size 32 to match size of target (10)
-Warning (10240): Verilog HDL Always Construct warning at qdpong.v(113): inferring latch(es) for variable "ball_y", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at qdpong.v(163): inferring latch(es) for variable "lose", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at qdpong.v(163): inferring latch(es) for variable "next_ball_state", which holds its previous value in one or more paths through the always construct
-Warning (10235): Verilog HDL Always Construct warning at qdpong.v(198): variable "lose" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Info (10041): Inferred latch for "next_ball_state.up_left" at qdpong.v(163)
-Info (10041): Inferred latch for "next_ball_state.up_right" at qdpong.v(163)
-Info (10041): Inferred latch for "next_ball_state.down_left" at qdpong.v(163)
-Info (10041): Inferred latch for "next_ball_state.down_right" at qdpong.v(163)
-Info (10041): Inferred latch for "lose" at qdpong.v(163)
-Info (10041): Inferred latch for "ball_y[0]" at qdpong.v(113)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(132): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(133): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(138): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(139): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(144): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(145): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(150): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(151): truncated value with size 32 to match size of target (10)
+Warning (10240): Verilog HDL Always Construct warning at qdpong.v(117): inferring latch(es) for variable "ball_y", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at qdpong.v(167): inferring latch(es) for variable "lose", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at qdpong.v(167): inferring latch(es) for variable "next_ball_state", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at qdpong.v(202): variable "lose" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "next_ball_state.up_left" at qdpong.v(167)
+Info (10041): Inferred latch for "next_ball_state.up_right" at qdpong.v(167)
+Info (10041): Inferred latch for "next_ball_state.down_left" at qdpong.v(167)
+Info (10041): Inferred latch for "next_ball_state.down_right" at qdpong.v(167)
+Info (10041): Inferred latch for "lose" at qdpong.v(167)
+Info (10041): Inferred latch for "ball_y[0]" at qdpong.v(117)
 Info (12128): Elaborating entity "pxl_clk" for hierarchy "pxl_clk:pxl_clk_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "pxl_clk:pxl_clk_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "pxl_clk:pxl_clk_inst|altpll:altpll_component"
@@ -1326,7 +1329,7 @@ Info (21057): Implemented 59 device resources after synthesis - the final resour
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 356 megabytes
-    Info: Processing ended: Wed Jul 17 13:50:21 2013
+    Info: Processing ended: Wed Jul 17 14:09:32 2013
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

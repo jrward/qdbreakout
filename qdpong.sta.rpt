@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for qdpong
-Wed Jul 17 13:50:36 2013
+Wed Jul 17 14:09:47 2013
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -1553,7 +1553,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Jul 17 13:50:34 2013
+    Info: Processing started: Wed Jul 17 14:09:45 2013
 Info: Command: quartus_sta qdpong -c qdpong
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1626,7 +1626,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 400 megabytes
-    Info: Processing ended: Wed Jul 17 13:50:36 2013
+    Info: Processing ended: Wed Jul 17 14:09:47 2013
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 

@@ -46,6 +46,10 @@ module qdpong(	input clk,
 	parameter top_edge = 8;
 	parameter bottom_edge = 472;
 	
+	parameter player_vstart = 460;
+	parameter player_width = 8;
+	parameter player_hlength = 32;
+	
 	parameter down_right = 2'b00;
 	parameter down_left = 2'b01;
 	parameter up_right = 2'b10;
@@ -193,19 +197,21 @@ module qdpong(	input clk,
 	always @ (hcount, vcount, pixel, position)
 	begin : display_decoder
 	
-		if (hcount >= 640 || vcount >= 480) rgb <= 3'b000;
+		if (hcount > screen_right || vcount > screen_bottom) rgb <= 3'b000;
 		
 		else if (lose) rgb <= red;
 		
-		else if (vcount <= bottom_edge && hcount < left_edge) rgb <= green;
+		else if (vcount < bottom_edge && hcount < left_edge) rgb <= green;
 		
-		else if (vcount <= bottom_edge && hcount < right_edge) rgb <= green;
+		else if (vcount < bottom_edge && hcount < right_edge) rgb <= green;
 		
 		else if (vcount < top_edge ) rgb <= green;
 		
 		else if (vcount > bottom_edge) rgb <= red;
 		
-		else if ((vcount > 460 && vcount < 470) && (hcount > ((position << 5) - 32) && hcount < ((position << 5) + 32))) rgb <= 3'b111;
+		else if (	vcount > player_vstart && vcount < (player_vstart + player_width ) && 
+					hcount > ((position << 5) - player_hlength + left_edge) && 
+					hcount < ((position << 5) + player_hlength + left_edge)	) rgb <= white;
 		
 		else rgb <= 3'b000;
 		

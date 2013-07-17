@@ -1,5 +1,5 @@
 Fitter report for qdpong
-Wed Jul 17 13:50:30 2013
+Wed Jul 17 14:09:41 2013
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Wed Jul 17 13:50:30 2013      ;
+; Fitter Status                      ; Successful - Wed Jul 17 14:09:41 2013      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; qdpong                                     ;
 ; Top-level Entity Name              ; qdpong                                     ;
@@ -1178,7 +1178,7 @@ Info (176353): Automatically promoted node pxl_clk:pxl_clk_inst|altpll:altpll_co
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1204,7 +1204,7 @@ Warning (169177): 3 pins must meet Altera requirements for 3.3-, 3.0-, and 2.5-V
 Info (144001): Generated suppressed messages file C:/altera/qdpong/qdpong.fit.smsg
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 525 megabytes
-    Info: Processing ended: Wed Jul 17 13:50:30 2013
+    Info: Processing ended: Wed Jul 17 14:09:41 2013
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 
