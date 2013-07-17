@@ -1,6 +1,6 @@
 Analysis & Synthesis report for qdpong
-Tue Jul 16 23:49:25 2013
-Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+Wed Jul 17 13:50:21 2013
+Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -9,25 +9,32 @@ Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Editio
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Source Files Read
-  5. Analysis & Synthesis Resource Usage Summary
-  6. Analysis & Synthesis Resource Utilization by Entity
-  7. Analysis & Synthesis IP Cores Summary
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |qdpong
- 11. Parameter Settings for User Entity Instance: pxl_clk:pxl_clk_inst|altpll:altpll_component
- 12. Parameter Settings for User Entity Instance: debounce_clk:debounce_clk_inst|altpll:altpll_component
- 13. altpll Parameter Settings by Entity Instance
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |qdpong|ball_state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |qdpong
+ 15. Parameter Settings for User Entity Instance: pxl_clk:pxl_clk_inst|altpll:altpll_component
+ 16. Parameter Settings for User Entity Instance: debounce_clk:debounce_clk_inst|altpll:altpll_component
+ 17. Parameter Settings for User Entity Instance: encoder:horizontal_enc
+ 18. altpll Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "encoder:horizontal_enc"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -43,24 +50,24 @@ applicable agreement for further details.
 
 
 
-+------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                       ;
-+------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 16 23:49:25 2013         ;
-; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
-; Revision Name                      ; qdpong                                        ;
-; Top-level Entity Name              ; qdpong                                        ;
-; Family                             ; Cyclone IV E                                  ;
-; Total logic elements               ; 109                                           ;
-;     Total combinational functions  ; 109                                           ;
-;     Dedicated logic registers      ; 31                                            ;
-; Total registers                    ; 31                                            ;
-; Total pins                         ; 10                                            ;
-; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 0                                             ;
-; Embedded Multiplier 9-bit elements ; 0                                             ;
-; Total PLLs                         ; 2                                             ;
-+------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jul 17 13:50:21 2013      ;
+; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; qdpong                                     ;
+; Top-level Entity Name              ; qdpong                                     ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 48                                         ;
+;     Total combinational functions  ; 48                                         ;
+;     Dedicated logic registers      ; 20                                         ;
+; Total registers                    ; 20                                         ;
+; Total pins                         ; 10                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 1                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -142,6 +149,7 @@ applicable agreement for further details.
 ; SDC constraint protection                                                  ; Off                ; Off                ;
 ; Synthesis Effort                                                           ; Auto               ; Auto               ;
 ; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
@@ -149,22 +157,34 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------+---------+
-; qdpong.v                         ; yes             ; User Verilog HDL File        ; C:/altera/qdpong/qdpong.v                                           ;         ;
-; pxl_clk.v                        ; yes             ; User Wizard-Generated File   ; C:/altera/qdpong/pxl_clk.v                                          ;         ;
-; debounce_clk.v                   ; yes             ; User Wizard-Generated File   ; C:/altera/qdpong/debounce_clk.v                                     ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/12.0sp2/quartus/libraries/megafunctions/altpll.tdf        ;         ;
-; aglobal120.inc                   ; yes             ; Megafunction                 ; c:/altera/12.0sp2/quartus/libraries/megafunctions/aglobal120.inc    ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/12.0sp2/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/12.0sp2/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/12.0sp2/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
-; db/pxl_clk_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/altera/qdpong/db/pxl_clk_altpll.v                                ;         ;
-; db/debounce_clk_altpll.v         ; yes             ; Auto-Generated Megafunction  ; C:/altera/qdpong/db/debounce_clk_altpll.v                           ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------+---------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; pxl_clk.v                        ; yes             ; User Wizard-Generated File   ; C:/altera/qdpong/pxl_clk.v                                       ;         ;
+; debounce_clk.v                   ; yes             ; User Wizard-Generated File   ; C:/altera/qdpong/debounce_clk.v                                  ;         ;
+; qdpong.v                         ; yes             ; User Verilog HDL File        ; C:/altera/qdpong/qdpong.v                                        ;         ;
+; encoder.v                        ; yes             ; User Verilog HDL File        ; C:/altera/qdpong/encoder.v                                       ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc    ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
+; db/pxl_clk_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/altera/qdpong/db/pxl_clk_altpll.v                             ;         ;
+; db/debounce_clk_altpll.v         ; yes             ; Auto-Generated Megafunction  ; C:/altera/qdpong/db/debounce_clk_altpll.v                        ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -172,46 +192,44 @@ applicable agreement for further details.
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                       ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 109                                                                                         ;
+; Estimated Total logic elements              ; 48                                                                                          ;
 ;                                             ;                                                                                             ;
-; Total combinational functions               ; 109                                                                                         ;
+; Total combinational functions               ; 48                                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                                             ;
-;     -- 4 input functions                    ; 60                                                                                          ;
-;     -- 3 input functions                    ; 20                                                                                          ;
-;     -- <=2 input functions                  ; 29                                                                                          ;
+;     -- 4 input functions                    ; 19                                                                                          ;
+;     -- 3 input functions                    ; 3                                                                                           ;
+;     -- <=2 input functions                  ; 26                                                                                          ;
 ;                                             ;                                                                                             ;
 ; Logic elements by mode                      ;                                                                                             ;
-;     -- normal mode                          ; 91                                                                                          ;
+;     -- normal mode                          ; 30                                                                                          ;
 ;     -- arithmetic mode                      ; 18                                                                                          ;
 ;                                             ;                                                                                             ;
-; Total registers                             ; 31                                                                                          ;
-;     -- Dedicated logic registers            ; 31                                                                                          ;
+; Total registers                             ; 20                                                                                          ;
+;     -- Dedicated logic registers            ; 20                                                                                          ;
 ;     -- I/O registers                        ; 0                                                                                           ;
 ;                                             ;                                                                                             ;
 ; I/O pins                                    ; 10                                                                                          ;
-; Total PLLs                                  ; 2                                                                                           ;
-;     -- PLLs                                 ; 2                                                                                           ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                           ;
+; Total PLLs                                  ; 1                                                                                           ;
+;     -- PLLs                                 ; 1                                                                                           ;
 ;                                             ;                                                                                             ;
 ; Maximum fan-out node                        ; pxl_clk:pxl_clk_inst|altpll:altpll_component|pxl_clk_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 21                                                                                          ;
-; Total fan-out                               ; 471                                                                                         ;
-; Average fan-out                             ; 2.91                                                                                        ;
+; Total fan-out                               ; 224                                                                                         ;
+; Average fan-out                             ; 2.52                                                                                        ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Library Name ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
-; |qdpong                                       ; 109 (109)         ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |qdpong                                                                                           ;              ;
-;    |debounce_clk:debounce_clk_inst|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|debounce_clk:debounce_clk_inst                                                            ;              ;
-;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|debounce_clk:debounce_clk_inst|altpll:altpll_component                                    ;              ;
-;          |debounce_clk_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|debounce_clk:debounce_clk_inst|altpll:altpll_component|debounce_clk_altpll:auto_generated ;              ;
-;    |pxl_clk:pxl_clk_inst|                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|pxl_clk:pxl_clk_inst                                                                      ;              ;
-;       |altpll:altpll_component|               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|pxl_clk:pxl_clk_inst|altpll:altpll_component                                              ;              ;
-;          |pxl_clk_altpll:auto_generated|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|pxl_clk:pxl_clk_inst|altpll:altpll_component|pxl_clk_altpll:auto_generated                ;              ;
-+-----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; |qdpong                                  ; 48 (48)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |qdpong                                                                            ;              ;
+;    |pxl_clk:pxl_clk_inst|                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|pxl_clk:pxl_clk_inst                                                       ;              ;
+;       |altpll:altpll_component|          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|pxl_clk:pxl_clk_inst|altpll:altpll_component                               ;              ;
+;          |pxl_clk_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |qdpong|pxl_clk:pxl_clk_inst|altpll:altpll_component|pxl_clk_altpll:auto_generated ;              ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -225,12 +243,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------+---------------------------------+
 
 
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------+
+; State Machine - |qdpong|ball_state                                                                              ;
++-----------------------+--------------------+---------------------+----------------------+-----------------------+
+; Name                  ; ball_state.up_left ; ball_state.up_right ; ball_state.down_left ; ball_state.down_right ;
++-----------------------+--------------------+---------------------+----------------------+-----------------------+
+; ball_state.down_right ; 0                  ; 0                   ; 0                    ; 0                     ;
+; ball_state.down_left  ; 0                  ; 0                   ; 1                    ; 1                     ;
+; ball_state.up_right   ; 0                  ; 1                   ; 0                    ; 1                     ;
+; ball_state.up_left    ; 1                  ; 0                   ; 0                    ; 1                     ;
++-----------------------+--------------------+---------------------+----------------------+-----------------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; ball_state~4                           ; Lost fanout        ;
+; ball_state~5                           ; Lost fanout        ;
+; ball_y[3..9]                           ; Lost fanout        ;
+; ball_x[0..9]                           ; Lost fanout        ;
+; ball_y[1,2]                            ; Lost fanout        ;
+; drawn                                  ; Lost fanout        ;
+; ball_state.down_right                  ; Lost fanout        ;
+; ball_state.down_left                   ; Lost fanout        ;
+; ball_state.up_right                    ; Lost fanout        ;
+; ball_state.up_left                     ; Lost fanout        ;
+; Total Number of Removed Registers = 26 ;                    ;
++----------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                    ;
++---------------+--------------------+---------------------------------------------------------------------------+
+; Register name ; Reason for Removal ; Registers Removed due to This Register                                    ;
++---------------+--------------------+---------------------------------------------------------------------------+
+; ball_state~4  ; Lost Fanouts       ; ball_y[9], ball_x[9], ball_x[0], ball_y[1], drawn, ball_state.down_right, ;
+;               ;                    ; ball_state.up_right, ball_state.up_left                                   ;
+; ball_state~5  ; Lost Fanouts       ; ball_y[8]                                                                 ;
++---------------+--------------------+---------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 31    ;
+; Total registers                              ; 20    ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
@@ -240,15 +301,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+---------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered          ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+---------------------+----------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; |qdpong|vcount[9]   ;                            ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; |qdpong|position[4] ;                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; |qdpong|rgb         ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+---------------------+----------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |qdpong|vcount[9]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -264,6 +323,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cyan           ; 011   ; Unsigned Binary                               ;
 ; magenta        ; 101   ; Unsigned Binary                               ;
 ; yellow         ; 110   ; Unsigned Binary                               ;
+; screen_left    ; 0     ; Signed Integer                                ;
+; screen_right   ; 639   ; Signed Integer                                ;
+; screen_top     ; 0     ; Signed Integer                                ;
+; screen_bottom  ; 479   ; Signed Integer                                ;
+; left_edge      ; 8     ; Signed Integer                                ;
+; right_edge     ; 632   ; Signed Integer                                ;
+; top_edge       ; 8     ; Signed Integer                                ;
+; bottom_edge    ; 472   ; Signed Integer                                ;
+; down_right     ; 00    ; Unsigned Binary                               ;
+; down_left      ; 01    ; Unsigned Binary                               ;
+; up_right       ; 10    ; Unsigned Binary                               ;
+; up_left        ; 11    ; Unsigned Binary                               ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1016,6 +1087,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: encoder:horizontal_enc ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 6     ; Signed Integer                             ;
+; LIMIT          ; 19    ; Signed Integer                             ;
+; DEBOUNCE       ; 15    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                                           ;
 +-------------------------------+--------------------------------------------------------+
@@ -1041,12 +1124,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+--------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "encoder:horizontal_enc"                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ctrl ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -1055,20 +1147,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
-    Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jul 16 23:49:20 2013
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed Jul 17 13:50:19 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off qdpong -c qdpong
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file qdpong.v
-    Info (12023): Found entity 1: qdpong
 Info (12021): Found 1 design units, including 1 entities, in source file pxl_clk.v
     Info (12023): Found entity 1: pxl_clk
 Info (12021): Found 1 design units, including 1 entities, in source file debounce_clk.v
     Info (12023): Found entity 1: debounce_clk
+Info (12021): Found 1 design units, including 1 entities, in source file qdpong.v
+    Info (12023): Found entity 1: qdpong
+Info (12021): Found 1 design units, including 1 entities, in source file encoder.v
+    Info (12023): Found entity 1: encoder
 Info (12127): Elaborating entity "qdpong" for the top level hierarchy
 Warning (10858): Verilog HDL warning at qdpong.v(22): object pixel used but never assigned
-Warning (10230): Verilog HDL assignment warning at qdpong.v(115): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at qdpong.v(126): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(128): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(129): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(134): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(135): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(140): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(141): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(146): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at qdpong.v(147): truncated value with size 32 to match size of target (10)
+Warning (10240): Verilog HDL Always Construct warning at qdpong.v(113): inferring latch(es) for variable "ball_y", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at qdpong.v(163): inferring latch(es) for variable "lose", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at qdpong.v(163): inferring latch(es) for variable "next_ball_state", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at qdpong.v(198): variable "lose" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "next_ball_state.up_left" at qdpong.v(163)
+Info (10041): Inferred latch for "next_ball_state.up_right" at qdpong.v(163)
+Info (10041): Inferred latch for "next_ball_state.down_left" at qdpong.v(163)
+Info (10041): Inferred latch for "next_ball_state.down_right" at qdpong.v(163)
+Info (10041): Inferred latch for "lose" at qdpong.v(163)
+Info (10041): Inferred latch for "ball_y[0]" at qdpong.v(113)
 Info (12128): Elaborating entity "pxl_clk" for hierarchy "pxl_clk:pxl_clk_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "pxl_clk:pxl_clk_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "pxl_clk:pxl_clk_inst|altpll:altpll_component"
@@ -1191,20 +1301,39 @@ Info (12133): Instantiated megafunction "debounce_clk:debounce_clk_inst|altpll:a
 Info (12021): Found 1 design units, including 1 entities, in source file db/debounce_clk_altpll.v
     Info (12023): Found entity 1: debounce_clk_altpll
 Info (12128): Elaborating entity "debounce_clk_altpll" for hierarchy "debounce_clk:debounce_clk_inst|altpll:altpll_component|debounce_clk_altpll:auto_generated"
+Info (12128): Elaborating entity "encoder" for hierarchy "encoder:horizontal_enc"
+Warning (10230): Verilog HDL assignment warning at encoder.v(21): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at encoder.v(32): truncated value with size 32 to match size of target (6)
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following PLL node(s):
+        Warning (14320): Synthesized away node "debounce_clk:debounce_clk_inst|altpll:altpll_component|debounce_clk_altpll:auto_generated|wire_pll1_clk[0]"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "enc_c" is stuck at GND
+    Warning (13410): Pin "rgb[0]" is stuck at GND
+    Warning (13410): Pin "rgb[1]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 26 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/altera/qdpong/qdpong.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 121 device resources after synthesis - the final resource count might be different
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "enc_a"
+    Warning (15610): No output dependent on input pin "enc_b"
+Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 109 logic cells
-    Info (21065): Implemented 2 PLLs
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 326 megabytes
-    Info: Processing ended: Tue Jul 16 23:49:25 2013
-    Info: Elapsed time: 00:00:05
+    Info (21061): Implemented 48 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 356 megabytes
+    Info: Processing ended: Wed Jul 17 13:50:21 2013
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/altera/qdpong/qdpong.map.smsg.
 
 

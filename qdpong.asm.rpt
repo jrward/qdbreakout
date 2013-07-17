@@ -1,6 +1,6 @@
 Assembler report for qdpong
-Tue Jul 16 23:50:05 2013
-Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+Wed Jul 17 13:50:33 2013
+Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -18,7 +18,7 @@ Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Editio
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jul 16 23:50:05 2013 ;
+; Assembler Status      ; Successful - Wed Jul 17 13:50:33 2013 ;
 ; Revision Name         ; qdpong                                ;
 ; Top-level Entity Name ; qdpong                                ;
 ; Family                ; Cyclone IV E                          ;
@@ -58,7 +58,7 @@ applicable agreement for further details.
 ; Clock source for configuration device                                       ; Internal ; Internal      ;
 ; Clock frequency of the configuration device                                 ; 10 MHZ   ; 10 MHz        ;
 ; Divide clock frequency by                                                   ; 1        ; 1             ;
-; Auto user code                                                              ; Off      ; Off           ;
+; Auto user code                                                              ; On       ; On            ;
 ; Use configuration device                                                    ; Off      ; Off           ;
 ; Configuration device                                                        ; Auto     ; Auto          ;
 ; Configuration device auto user code                                         ; Off      ; Off           ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                              ;
 +----------------+--------------------------------------+
 ; Device         ; EP4CE22F17C6                         ;
-; JTAG usercode  ; 0xFFFFFFFF                           ;
-; Checksum       ; 0x00143D65                           ;
+; JTAG usercode  ; 0x0013BA85                           ;
+; Checksum       ; 0x0013BA85                           ;
 +----------------+--------------------------------------+
 
 
@@ -102,15 +102,15 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
-    Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jul 16 23:50:00 2013
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Wed Jul 17 13:50:31 2013
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off qdpong -c qdpong
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 308 megabytes
-    Info: Processing ended: Tue Jul 16 23:50:05 2013
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 346 megabytes
+    Info: Processing ended: Wed Jul 17 13:50:33 2013
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
