@@ -7,16 +7,21 @@ module encoder(	input clk,
 	parameter WIDTH = 6;
 	parameter LIMIT = 19;
 	parameter DEBOUNCE = 15000;
+	//parameter INITIAL = 9;
 	
 	integer debounce;
 			
 	reg hold;
+	
+//	initial begin
+//		ctrl = INITIAL;
+//	end
 		
 	always @ (posedge clk or negedge reset_n)
 	begin : encoder_logic
 		if (!reset_n)
 		begin
-			ctrl <= 0;
+			ctrl <= 9;
 			debounce <= 0;
 		end
 		
@@ -36,7 +41,7 @@ module encoder(	input clk,
 			debounce <= debounce + 1'b1;
 			if (debounce >= DEBOUNCE)
 			begin
-				if (ctrl > 0) ctrl <= ctrl - 1'b1; 
+				if (ctrl > 1) ctrl <= ctrl - 1'b1; 
 				hold <= 1;
 				debounce <= 0;
 			end

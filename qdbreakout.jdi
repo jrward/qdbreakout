@@ -1,8 +1,7 @@
 <sld_project_info>
-  <project>
-    <hash md5_digest_80b="70c1aaa8d50b026506e4"/>
-  </project>
   <file_info>
-    <file device="EP4CE22F17C6" path="qdbreakout.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x00183B6E" device="EP4CE22F17C6" path="qdbreakout.sof" usercode="0xFFFFFFFF"/>
   </file_info>
+  <hub_info ir_width="0" node_count="0"/>
+  <node_info/>
 </sld_project_info>

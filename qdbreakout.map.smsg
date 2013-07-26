@@ -1,1 +1,2 @@
+Warning (10268): Verilog HDL information at qdbreakout.v(447): always construct contains both blocking and non-blocking assignments
 Info (10281): Verilog HDL Declaration information at encoder.v(9): object "DEBOUNCE" differs only in case from object "debounce" in the same scope
