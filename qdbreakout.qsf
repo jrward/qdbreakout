@@ -83,9 +83,14 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to reset_n
+set_global_assignment -name VERILOG_FILE rtl/defines.v
+set_global_assignment -name VERILOG_FILE rtl/ball_logic.v
+set_global_assignment -name VERILOG_FILE rtl/vga.v
 set_global_assignment -name VERILOG_FILE rtl/block_positions.v
 set_global_assignment -name VERILOG_FILE rtl/qdbreakout.v
 set_global_assignment -name VERILOG_FILE rtl/pxl_clk.v
 set_global_assignment -name VERILOG_FILE rtl/encoder.v
 set_global_assignment -name SDC_FILE qdbreakout.sdc
+set_global_assignment -name VERILOG_FILE rtl/display_logic.v
+set_global_assignment -name VERILOG_FILE rtl/collision_logic.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
